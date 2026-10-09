@@ -1,0 +1,24 @@
+VRCapture beta binary license
+Copyright (c) 2026 thefreemike. All rights reserved.
+
+Permission is granted to use the unmodified VRCapture beta binaries without
+charge for personal use and content creation, including monetized videos.
+You may share complete, unmodified release packages without charge, keeping
+this license and all third-party notices and source materials intact.
+
+VRCapture's application source is not provided or licensed for redistribution.
+No permission is granted to sell, rebrand or distribute modified VRCapture
+binaries. Rights not expressly granted are reserved, subject to applicable law.
+This license does not grant rights to third-party game or recorded content.
+
+The beta is provided AS IS, without warranties of any kind, including fitness
+for a particular purpose or uninterrupted, error-free recording. To the extent
+permitted by applicable law, the author is not liable for damages arising from
+its use, including lost recordings. Make a short test before important sessions.
+
+Third-party components are excluded from the restrictions above and retain
+their own licenses. VRCapture invokes a separate FFmpeg executable licensed
+under LGPL 2.1 or later. Its corresponding source and build instructions are
+included under tools/source. FFmpeg is copyright its respective developers.
+OpenVR and OpenXR retain their respective copyright and license notices.
+Nothing here limits rights granted by those third-party licenses.
