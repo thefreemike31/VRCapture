@@ -16,7 +16,7 @@ Select the microphone for your current connection and confirm its armed meter re
 
 ## Missing edges, menus or overlays
 
-Widescreen crops the eye image. Try **Native source** to distinguish cropping from missing content. **Menus: VR perspective** shows supported game panels spatially. Unsupported layers or modifiers produce diagnostics. Quest/system UI added after PC composition is not captured. SteamVR mirror capture includes overlays to the extent SteamVR exposes them, while OpenXR captures supported game-submitted layers.
+Select **Framing: Full view (keep hands visible)** to preserve the complete submitted eye image at 1080p, 1440p, 4K or 2560 x 1080. Bars preserve its proportions where needed. This bypasses smoothing and edge margin, but cannot recover hands or scenery absent from the source image. **Fill** crops the eye image. **Quest 3** and **Native source** always use Full view. **Menus: VR perspective** shows supported game panels spatially. Unsupported layers or modifiers produce diagnostics. Quest/system UI added after PC composition is not captured. SteamVR mirror capture includes overlays to the extent SteamVR exposes them, while OpenXR captures supported game-submitted layers.
 
 ## An alarm sounds
 

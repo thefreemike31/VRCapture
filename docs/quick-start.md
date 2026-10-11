@@ -32,7 +32,9 @@ Exit the game or use Stop recording. Wait for saving to complete before closing 
 
 ## Framing and quality
 
-- **1080p / 1440p / 4K:** 16:9, targeting 60 fps. These crop a single eye; they do not stitch both eyes. Higher output resolution cannot create missing source detail.
+- **1080p / 1440p / 4K:** 16:9, targeting 60 fps. Choose Fill for a cropped single eye or Full view to retain the complete image with bars where needed. They do not stitch both eyes. Higher output resolution cannot create missing source detail.
+- **2560 x 1080:** ultrawide output, targeting 60 fps. Full view preserves the complete submitted eye image, including hands when present, with bars where needed; Fill crops more vertically than 16:9 for a typical tall eye image.
+- **Framing: Full view:** preserves every part of the submitted eye image and its proportions at the selected resolution. Smoothing and edge margin are disabled. Quest 3 and Native source always use full view.
 - **Quest 3:** 2064 x 2208 output, preserving source aspect ratio with padding when needed.
 - **Native source:** output dimensions follow the first source image, aligned for encoding. SteamVR native means its mirror dimensions, which may differ from the game's eye render target.
 - **Menus: Flat panel:** makes supported panel-only menus easier to read. **VR perspective** preserves their placement relative to your view.

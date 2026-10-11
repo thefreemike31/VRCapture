@@ -6,20 +6,22 @@ Arm on your desktop, put on your headset, and launch your game. VRCapture record
 
 ![VRCapture desktop interface](images/recorder.jpg)
 
-**Beta 0.1.0-beta.1 · Windows x64 · Closed source**
+**Beta 0.1.0-beta.2 · Windows x64 · Closed source**
 
 [Download the beta](https://github.com/thefreemike31/VRCapture/releases) · [Start here](docs/quick-start.md) · [Audio & editing](docs/audio-and-editing.md) · [Wrist controls](docs/wrist-panel.md) · [Troubleshooting](docs/troubleshooting.md)
 
 ## What you can do
 
-- Record at 1080p, 1440p or 4K, targeting 60 fps, with H.264, HEVC or AV1 hardware encoding where supported by your GPU.
-- Choose a widescreen crop, Quest 3 panel dimensions, or the full source-eye aspect ratio.
+- Record at 1080p, 1440p, 4K or 2560×1080 ultrawide, targeting 60 fps, with H.264, HEVC or AV1 hardware encoding where supported by your GPU.
+- Choose **Full view (keep hands visible)** to retain the complete submitted eye image with bars where needed, or **Fill** for a widescreen crop. Quest 3 and Native source always use Full view.
 - Capture 32-bit and 64-bit OpenXR games using D3D11/OpenGL, or use the SteamVR compositor source.
 - Adjust microphone and game volume independently. Save a mixed track plus separate microphone and game tracks for editing.
 - Monitor audio and recording status on a wrist panel. Use head aiming and dwell controls to stop, confirm and re-arm.
 - Hear recording alarms and recover saved recording components after an interruption.
 
 ## Your first take
+
+**New in beta.2:** Full view framing is now available at every widescreen resolution, and 2560×1080 recording is supported. Full view bypasses smoothing and edge margin. It preserves what the game supplies; it cannot recover hands or scenery outside that image. Existing installations keep their framing preferences, so select Full view before arming to try it.
 
 1. Download the release ZIP and **extract everything** to a permanent, writable folder.
 2. Close other copies of VRCapture and run **Test recording.cmd**. Play its generated demo to check encoding and saving.
