@@ -6,6 +6,10 @@ Connect your headset before selecting audio. Click **Refresh devices** if a devi
 
 **Automatic game output** resolves the game's audio output when a take starts, falling back to the Windows default when necessary. It does not follow a device switch halfway through a take. It captures everything playing through that output, including other applications. To change the route, finish the take, select a device, then arm again.
 
+VRCapture's own alerts are silent during recording. The recorder waits for any arming tone to finish before opening the microphone and game-output capture. Missing game sound is shown on the desktop and optional wrist panel; it does not play a tone into your recording or reset the silence timer. Real game sound clears that warning normally.
+
+The wrist panel shows the selected microphone by name. Look and hold on its **MIC** row to choose another mic before or during a take. During recording, the old mic stays active until the new one is ready; an unavailable replacement leaves the old mic selected. Game audio is unchanged. A brief microphone gap is possible at the device handoff; recording timing and track layout stay continuous.
+
 ## Balance voice and gameplay
 
 The microphone and game sliders independently scale the recorded audio. Start at mic 100% and game 65%, speak at your usual volume, and listen to a short recorded take. Lower the game further if it masks narration. Meters work while armed and recording.

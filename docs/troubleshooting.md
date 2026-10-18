@@ -20,7 +20,7 @@ Select **Framing: Full view (keep hands visible)** to preserve the complete subm
 
 ## An alarm sounds
 
-Check the recorder promptly. A long loading screen can trigger the source-stale warning; a silent menu can trigger the game-audio warning. Warnings and fatal errors are displayed separately. **Silence alarm** acknowledges the sound; it does not repair the underlying problem. The saved-time counter is more useful than a moving preview for checking progress.
+Warnings stay silent during recording so VRCapture's tones cannot enter your footage or microphone. Check the desktop or enable the wrist panel in Settings before recording. A long loading screen can trigger the source-stale warning; 15 seconds without game sound triggers the game-audio warning. Warnings and fatal errors are displayed separately. Test/arming tones remain audible before capture; fatal alarms can sound after capture stops. **Silence alarm** acknowledges the sound; it does not repair the underlying problem. The saved-time counter is more useful than a moving preview for checking progress.
 
 ## Saving takes time, or a take was interrupted
 

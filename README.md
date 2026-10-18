@@ -6,7 +6,7 @@ Arm on your desktop, put on your headset, and launch your game. VRCapture record
 
 ![VRCapture desktop interface](images/recorder.jpg)
 
-**Beta 0.1.0-beta.2 · Windows x64 · Closed source**
+**Beta 0.1.0-beta.3 · Windows x64 · Closed source**
 
 [Download the beta](https://github.com/thefreemike31/VRCapture/releases) · [Start here](docs/quick-start.md) · [Audio & editing](docs/audio-and-editing.md) · [Wrist controls](docs/wrist-panel.md) · [Troubleshooting](docs/troubleshooting.md)
 
@@ -16,12 +16,14 @@ Arm on your desktop, put on your headset, and launch your game. VRCapture record
 - Choose **Full view (keep hands visible)** to retain the complete submitted eye image with bars where needed, or **Fill** for a widescreen crop. Quest 3 and Native source always use Full view.
 - Capture 32-bit and 64-bit OpenXR games using D3D11/OpenGL, or use the SteamVR compositor source.
 - Adjust microphone and game volume independently. Save a mixed track plus separate microphone and game tracks for editing.
-- Monitor audio and recording status on a wrist panel. Use head aiming and dwell controls to stop, confirm and re-arm.
-- Hear recording alarms and recover saved recording components after an interruption.
+- See the selected microphone on a wrist panel and change it before or during recording. Use smoother head aiming and dwell controls to arm, stop and confirm.
+- See desktop/wrist warnings during recording, hear setup and post-capture failure alarms, and recover saved components after an interruption.
 
 ## Your first take
 
-**New in beta.2:** Full view framing is now available at every widescreen resolution, and 2560×1080 recording is supported. Full view bypasses smoothing and edge margin. It preserves what the game supplies; it cannot recover hands or scenery outside that image. Existing installations keep their framing preferences, so select Full view before arming to try it.
+**New in beta.3:** Change the microphone from the wrist panel, with a more responsive aiming dot. Recording warnings stay silent so recorder tones cannot enter your audio. Capture avoids redundant queued-frame copies and skips the desktop preview when minimized; reports include more timing information for diagnosing stutters. These improvements do not guarantee stutter-free gameplay on every setup.
+
+To update, close your game and VRCapture, then extract the complete ZIP over your existing installation. Keep your `capture-settings.ini` and recordings; the ZIP contains neither. If you move to a new folder, follow the relocation steps in the [quick-start guide](docs/quick-start.md).
 
 1. Download the release ZIP and **extract everything** to a permanent, writable folder.
 2. Close other copies of VRCapture and run **Test recording.cmd**. Play its generated demo to check encoding and saving.
@@ -37,7 +39,7 @@ Requires Windows 10/11 x64, a working PCVR setup, Windows Media Foundation and a
 
 OpenXR capture currently supports D3D11 and OpenGL; D3D12/Vulkan OpenXR and native Oculus SDK capture are not implemented. OpenGL needs compatible `WGL_NV_DX_interop2` support. SteamVR capture uses its compositor mirror and has different framing/overlay limits. Standalone Quest games and Quest/Virtual Desktop system UI are outside this PC capture path.
 
-This beta has been used for real gameplay recordings, but hardware, games and runtimes vary. Test your own setup. Recovery can preserve media already saved; it cannot reconstruct unsaved footage or guarantee against recording loss. Check audible alarms promptly. The app is currently unsigned.
+This beta has been used for real gameplay recordings, but hardware, games and runtimes vary. Test your own setup. Recovery can preserve media already saved; it cannot reconstruct unsaved footage or guarantee against recording loss. Check desktop/wrist warnings promptly; alerts stay silent while recording to keep them out of your audio. The app is currently unsigned.
 
 ## Downloads, feedback and source
 
