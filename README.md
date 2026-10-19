@@ -6,7 +6,7 @@ Arm on your desktop, put on your headset, and launch your game. VRCapture record
 
 ![VRCapture desktop interface](images/recorder.jpg)
 
-**Beta 0.1.0-beta.3 · Windows x64 · Closed source**
+**Beta 0.1.0-beta.4 · Windows x64 · Closed source**
 
 [Download the beta](https://github.com/thefreemike31/VRCapture/releases) · [Start here](docs/quick-start.md) · [Audio & editing](docs/audio-and-editing.md) · [Wrist controls](docs/wrist-panel.md) · [Troubleshooting](docs/troubleshooting.md)
 
@@ -21,7 +21,9 @@ Arm on your desktop, put on your headset, and launch your game. VRCapture record
 
 ## Your first take
 
-**New in beta.3:** Change the microphone from the wrist panel, with a more responsive aiming dot. Recording warnings stay silent so recorder tones cannot enter your audio. Capture avoids redundant queued-frame copies and skips the desktop preview when minimized; reports include more timing information for diagnosing stutters. These improvements do not guarantee stutter-free gameplay on every setup.
+**New in beta.4 — performance hotfix:** Recording now uses one consistent 60 Hz clock, capture shaders are compiled before shipping, and the encoder reuses GPU surfaces instead of allocating a new texture every frame. Update even if you have not noticed stutters. Your resolution, bitrate and audio options stay the same; wrist microphone selection and silent recording warnings remain available.
+
+An 11-minute F.E.A.R. VR test at 4K60 completed with no missed recording output slots or recording queue drops, and the tester reported substantially smoother headset play. This is a successful test on one setup, not a guarantee of stutter-free gameplay on every system. See [stutter troubleshooting](docs/troubleshooting.md#stutter-or-uneven-recording).
 
 To update, close your game and VRCapture, then extract the complete ZIP over your existing installation. Keep your `capture-settings.ini` and recordings; the ZIP contains neither. If you move to a new folder, follow the relocation steps in the [quick-start guide](docs/quick-start.md).
 

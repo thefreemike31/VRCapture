@@ -44,4 +44,6 @@ Exit the game or use Stop recording. Wait for saving to complete before closing 
 
 ## Update or move
 
-Close games and finish saving. In the old copy, select **Settings > Disable OpenXR capture** before moving or replacing the folder. Keep recordings and `capture-settings.ini` backed up. Extract the new version fully; retained preferences may refer to the old recording path. Check **Save folder**, arm to register the new layers, and make a short test. Only run one copy at a time.
+To update in the same folder, close the game, finish saving and close VRCapture. Extract the complete new ZIP over the old installation. Keep recordings and `capture-settings.ini` backed up; neither is included in the download. Open the updated recorder, check **Save folder**, and make a short test. Only run one copy at a time.
+
+To move to a different folder, close games and use **Settings > Disable OpenXR capture** in the old copy before moving it. Extract the new version fully, copy your preferences if wanted, and check **Save folder** because retained preferences may refer to the old path. Arm to register the new layers before launching the game.
