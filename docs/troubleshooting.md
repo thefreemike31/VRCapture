@@ -12,7 +12,7 @@ Try H.264, 1080p60, Auto bitrate and current GPU drivers. HEVC/AV1 hardware supp
 
 ## Stutter or uneven recording
 
-Update to beta.4 or newer using the complete ZIP. Beta.4 fixes recording-clock pacing, removes runtime compilation of capture shaders and reuses encoder GPU surfaces. Close the game and recorder before replacing the files, and keep your settings and recordings.
+Update to beta.5 or newer using the complete ZIP. It includes the earlier recording-clock, shader and encoder-surface fixes, plus less OpenGL image-copy work and desktop preview presentation that runs independently of recording. Recording deadlines continue during window resizing. Close the game and recorder before replacing the files, and keep your settings and recordings.
 
 Note whether the hitch occurs in the headset, the saved MP4, or both, and keep a rough video timestamp. A 60 fps file can still contain repeated source images when fresh game frames arrive late. Neither a repeated image nor a long VR runtime call alone proves which component caused a hitch.
 
@@ -23,6 +23,12 @@ After exiting normally, preserve the reports beside the MP4 and the OpenXR layer
 ## Voice missing, quiet or doubled
 
 Select the microphone for your current connection and confirm its armed meter responds when you speak. A Virtual Desktop microphone may still be listed while using Steam Link; its presence does not prove it is carrying your voice. Check routing and listen to a short take. Lower game volume if it masks speech. When editing separate streams, mute Mix. See [audio and editing](audio-and-editing.md).
+
+## Pause or camera settings seem missing
+
+Pause becomes available after recording starts. **Resume** continues that same take; **Stop** or game exit saves it. The frozen timer while paused is intentional. Update the entire package so the app, helpers and wrist layers all match, then restart the game.
+
+Beta.5 saves smoothing and edge margin in `capture-settings.ini`. Keep that file when updating. Values already lost by an older version cannot be recovered; set them once in the updated app. Full view disables both controls temporarily, and the SteamVR compositor source disables smoothing, while keeping their stored values.
 
 ## Missing edges, menus or overlays
 

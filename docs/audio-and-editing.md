@@ -29,3 +29,5 @@ Choose **Editing: Mix + Microphone + Game** before arming. The MP4 contains:
 Import the MP4 into Resolve. Depending on its import settings, you may need **Clip Attributes > Audio** to expose the embedded streams as separate tracks. **Mute the Mix track when using Microphone and Game**, or the audio will be doubled. These are separate streams inside one MP4, not three finished audio files next to it.
 
 For one combined playback track, choose **Mixed (game + microphone)** instead. Track mode is selected before arming; the volume sliders can be adjusted during recording.
+
+**Pause / Resume** removes the paused interval from video and all audio tracks together. Resume continues the same file with aligned tracks; it does not insert silence or frozen video for the break. Input meters remain live while paused, but that interval is excluded from the saved recording. Stop or game exit finalizes the take, even while paused.

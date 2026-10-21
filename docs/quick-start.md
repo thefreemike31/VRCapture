@@ -28,7 +28,9 @@ For OpenXR, click **Arm recording** and approve the Windows setup prompt if requ
 
 Recording starts when the game supplies supported VR images. Desktop launchers and splash screens before VR initialization are not captured. A preview is not proof that a take is recording: check the recording status and saved-time counter.
 
-Exit the game or use Stop recording. Wait for saving to complete before closing the recorder. Open **Recordings** and inspect picture, voice, game sound, menus and duration. Repeat this short check when changing hardware, runtime or codec.
+During a take, use **Pause** on the desktop or [wrist panel](wrist-panel.md) to leave an unwanted section out. **Resume** continues the same MP4, excluding the paused picture and sound from every audio track. The recording timer freezes while the preview and input meters stay live. Recording quality settings remain unchanged.
+
+Exit the game or use **Stop recording** to save, including while paused. Pause does not keep a take open after the game exits. Wait for saving to complete before closing the recorder. Open **Recordings** and inspect picture, voice, game sound, menus and duration. Repeat this short check when changing hardware, runtime or codec.
 
 ## Framing and quality
 
@@ -39,6 +41,8 @@ Exit the game or use Stop recording. Wait for saving to complete before closing 
 - **Native source:** output dimensions follow the first source image, aligned for encoding. SteamVR native means its mirror dimensions, which may differ from the game's eye render target.
 - **Menus: Flat panel:** makes supported panel-only menus easier to read. **VR perspective** preserves their placement relative to your view.
 - **Smoothing:** OpenXR rotational smoothing. More edge margin trades field of view for room at the edges; neither can recover scenery the game did not render.
+
+Smoothing and edge margin are saved when you finish adjusting them. Full view bypasses both, and SteamVR compositor capture bypasses smoothing, without erasing your chosen values. Older versions did not store these two settings; adjust them once in beta.5 if their previous values were lost.
 
 60 fps is an output target. Slow sources repeat frames; overloaded recording can drop frames. Test performance in the games and settings you intend to use.
 

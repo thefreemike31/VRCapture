@@ -10,6 +10,7 @@ This beta uses **head aiming**, not controller pointing or eye tracking. A dot s
 
 - **Arm:** prepare recording before launching or returning to a supported game.
 - **Cancel:** cancel an armed take that has not begun.
+- **Pause / Resume:** the left button pauses or continues the current take. Paused video and audio are excluded, and resumed footage stays in the same MP4. Look away after activation before dwelling again.
 - **Stop recording:** reveals a separate **Confirm Stop** target; aim at that target and dwell again.
 - **MIC row:** opens a compact microphone picker. Use **Previous** / **Next**, then **Use microphone**, or **Back** to leave it unchanged. Available microphones are refreshed when you open the picker. **Off** intentionally stops microphone capture.
 
@@ -17,7 +18,9 @@ You can select the microphone before arming or during a recording. During a take
 
 The aiming dot now refreshes about 60 times per second while aimed at the panel, while text and meters retain their lighter refresh rate. The 1.5-second activation hold and separate Stop confirmation remain. With VRCapture open and the wrist panel enabled, **Arm recording** also works from inside an already-running supported game; capture begins after preparation completes.
 
-After saving completes, you can re-arm. Pause/resume is not implemented. During recording, warnings are silent and appear on the desktop and this panel. A silent-game warning says **No game audio for 15 seconds**. Test/arming tones play before capture, and fatal alarms can resume after capture stops. A visual notice cannot survive a failed headset/runtime connection.
+While paused, the panel says **PAUSED**, the elapsed recording timer freezes, and input meters remain live. You can still change microphones or stop. Exiting the game also saves the take while paused. After saving completes, you can re-arm.
+
+During recording, warnings are silent and appear on the desktop and this panel. A silent-game warning says **No game audio for 15 seconds**. Test/arming tones play before capture, and fatal alarms can resume after capture stops. A visual notice cannot survive a failed headset/runtime connection.
 
 ## Keep it out of the video
 
