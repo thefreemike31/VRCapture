@@ -18,6 +18,16 @@ Before playing, close other copies and run **Test recording.cmd**. It creates te
 
 For OpenXR, click **Arm recording** and approve the Windows setup prompt if requested. This registers capture for both 32-bit and 64-bit applications. Canceling setup leaves it unarmed. Launch games afterward; games already open need restarting.
 
+## Fullscreen live preview
+
+In beta.6 or newer, click **Fullscreen**, press **F11** while VRCapture has keyboard focus, or double-click the live preview. It opens on the monitor containing the recorder window, with black bars as needed to preserve proportions. Move the recorder to another monitor before entering fullscreen to choose that display.
+
+**Escape**, **F11**, double-click or closing the fullscreen preview returns to the recorder controls. These actions do not stop, pause or start a take. The mirror also works while recording is paused, and continues if you minimize the main controls. Use the existing **Stop recording** button or wrist controls when you want to finish a take.
+
+For a live mirror without saving video, open VRCapture, choose your source, use **Fullscreen**, then launch the game without arming. First-use OpenXR setup may request Windows administrator approval; a game already running must restart after registration. This mode does not open recording audio or start the encoder. If you want a recording too, arm normally before launching the game.
+
+Fullscreen enlarges the existing **1280×720 live preview**. It does not change recording resolution, bitrate, framing or the saved file, and is not a native 4K preview. Presentation runs on the independent preview worker; the display still uses some GPU resources.
+
 ## Prepare before putting on the headset
 
 1. Connect the headset. Refresh audio devices if needed, choose your microphone, and leave game output on Automatic unless you need a particular device.
@@ -42,7 +52,7 @@ Exit the game or use **Stop recording** to save, including while paused. Pause d
 - **Menus: Flat panel:** makes supported panel-only menus easier to read. **VR perspective** preserves their placement relative to your view.
 - **Smoothing:** OpenXR rotational smoothing. More edge margin trades field of view for room at the edges; neither can recover scenery the game did not render.
 
-Smoothing and edge margin are saved when you finish adjusting them. Full view bypasses both, and SteamVR compositor capture bypasses smoothing, without erasing your chosen values. Older versions did not store these two settings; adjust them once in beta.5 if their previous values were lost.
+Smoothing and edge margin are saved when you finish adjusting them. Full view bypasses both, and SteamVR compositor capture bypasses smoothing, without erasing your chosen values. Older versions did not store these two settings; adjust them once in beta.5 or newer if their previous values were lost.
 
 60 fps is an output target. Slow sources repeat frames; overloaded recording can drop frames. Test performance in the games and settings you intend to use.
 

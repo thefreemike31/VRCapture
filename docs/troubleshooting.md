@@ -6,6 +6,8 @@ Wait for **ARMED** before launching the game, and choose a source matching its A
 
 Check the status message. D3D12/Vulkan OpenXR and native Oculus SDK capture are not supported by the OpenXR layer. Game and recorder must use the same GPU. Do not replace game DLLs to fix recorder setup.
 
+Beta.6 fixes an architecture-specific compatibility issue: a mod disabling an incompatible 64-bit capture layer could previously disable the 32-bit layer too. Update both `layers` folders, including their JSON manifests, and restart the game. Mod authors can disable them independently with `DISABLE_VRCAPTURE_X86` and `DISABLE_VRCAPTURE_X64`; the old shared `DISABLE_VRCAPTURE` name is no longer used. This addresses the reported disable-switch collision; an individual mod may still have other compatibility issues.
+
 ## Encoder unavailable or the demo fails
 
 Try H.264, 1080p60, Auto bitrate and current GPU drivers. HEVC/AV1 hardware support varies. Keep the entire extracted package together and use a writable local folder. On Windows N, check that the Media Feature Pack is installed. Keep the generated diagnostics if the bundled demo fails.

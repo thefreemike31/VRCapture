@@ -6,7 +6,9 @@ Arm on your desktop, put on your headset, and launch your game. VRCapture record
 
 ![VRCapture desktop interface](images/recorder.jpg)
 
-**Beta 0.1.0-beta.5 · Windows x64 · Closed source**
+**0.1.0-beta.6 · Windows x64 · Closed source**
+
+**New in beta.6:** use the live preview as a fullscreen desktop mirror, including without recording. This release also fixes a shared disable switch that could prevent capture in some 32-bit OpenXR mods. See [fullscreen preview](docs/quick-start.md#fullscreen-live-preview).
 
 [Download the beta](https://github.com/thefreemike31/VRCapture/releases) · [Start here](docs/quick-start.md) · [Audio & editing](docs/audio-and-editing.md) · [Wrist controls](docs/wrist-panel.md) · [Troubleshooting](docs/troubleshooting.md)
 
@@ -17,12 +19,13 @@ Arm on your desktop, put on your headset, and launch your game. VRCapture record
 - Capture 32-bit and 64-bit OpenXR games using D3D11/OpenGL, or use the SteamVR compositor source.
 - Adjust microphone and game volume independently. Save a mixed track plus separate microphone and game tracks for editing.
 - Pause and resume from the desktop or wrist panel, keeping one video file with paused picture and sound excluded.
+- View the live preview fullscreen with **Fullscreen / F11** or a double-click. **Escape** returns to the controls without stopping a recording.
 - See the selected microphone on a wrist panel and change it before or during recording. Use head aiming and dwell controls to arm, pause, resume, stop and confirm.
 - See desktop/wrist warnings during recording, hear setup and post-capture failure alarms, and recover saved components after an interruption.
 
 ## Your first take
 
-**New in beta.5 — pause/resume, remembered camera settings and further performance improvements:** Skip a break or an unwanted section with **Pause**, then **Resume** into the same MP4. Smoothing and edge margin now survive restart and upgrades that retain your settings file. OpenGL capture avoids a redundant image copy, and desktop preview presentation runs independently of recording, including during window resizing. Resolution, bitrate and audio-track choices stay the same.
+**Also included from beta.5 — pause/resume, remembered camera settings and further performance improvements:** Skip a break or an unwanted section with **Pause**, then **Resume** into the same MP4. Smoothing and edge margin survive restart and upgrades that retain your settings file. OpenGL capture avoids a redundant image copy, and desktop preview presentation runs independently of recording, including during window resizing. Resolution, bitrate and audio-track choices stay the same.
 
 The latest owner test saved 7 minutes 46 seconds of 4K60 AV1 footage with two pause/resume cuts, no missed recording output slots or queue drops, and no reported headset stutter. The cuts were reported as seamless. Automated checks also cover all three codecs and both capture-layer architectures. These results describe the tested setups; performance still depends on the game, GPU and headset connection. See [stutter troubleshooting](docs/troubleshooting.md#stutter-or-uneven-recording).
 
