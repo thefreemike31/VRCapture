@@ -8,15 +8,23 @@ Before playing, close other copies and run **Test recording.cmd**. It creates te
 
 ## Choose your capture source
 
+Choose **Auto (recommended)** to detect the capture source when your game starts. New settings default to Auto; an upgrade preserves your previous manual choice, so select Auto once if needed. The choice is saved for future launches.
+
+Auto prefers a valid OpenXR game image. It gives OpenXR a short opportunity to arrive before using SteamVR's game mirror, and ignores SteamVR Home. Once selected, the source stays fixed through recording, pause/resume and loading screens. The app displays **Auto -> OpenXR** or **Auto -> SteamVR**. Manual choices remain available:
+
 | Game/setup | Recorder source | What to expect |
 | --- | --- | --- |
-| F.E.A.R. VR with Virtual Desktop, Link or SteamVR | OpenXR (D3D11 / OpenGL) | Captures supported game layers; wrist panel can stay out of the video. |
-| Another supported D3D11/OpenGL OpenXR game | OpenXR (D3D11 / OpenGL) | Flat or VR-perspective menus, optional rotational smoothing. |
+| F.E.A.R. VR with Virtual Desktop, Link or SteamVR | OpenXR (DX11 / DX12 / GL) | Captures supported game layers; wrist panel can stay out of the video. |
+| Another supported D3D11/D3D12/OpenGL OpenXR game | OpenXR (DX11 / DX12 / GL) | Flat or VR-perspective menus, optional rotational smoothing. |
 | Native OpenVR game, or a game running through SteamVR whose graphics API our OpenXR path does not support | SteamVR / OpenVR | Captures SteamVR's composited eye mirror, including visible overlays. No recorder smoothing or flat-menu mode. |
 
 **SteamVR can run OpenXR games.** Using Steam Link does not automatically mean you need the recorder's SteamVR compositor source. VRCapture does not change your runtime or install a game-specific DLL.
 
-For OpenXR, click **Arm recording** and approve the Windows setup prompt if requested. This registers capture for both 32-bit and 64-bit applications. Canceling setup leaves it unarmed. Launch games afterward; games already open need restarting.
+For Auto or OpenXR, click **Arm recording** and approve the Windows setup prompt if requested. This registers capture for both 32-bit and 64-bit applications. Canceling setup leaves it unarmed. Launch games afterward; games already open need restarting.
+
+Beta.7 adds native OpenXR DirectX 12 capture and wrist controls alongside D3D11 and OpenGL. This covers 8-bit SDR RGBA/BGRA images; HDR/10-bit/float, Vulkan and native Oculus SDK capture are not implemented.
+
+Auto chooses the capture method without changing resolution, bitrate or your VR runtime. SteamVR capture still includes visible overlays and bypasses recorder smoothing. When no supported game image is available, VRCapture stays armed rather than starting an empty take.
 
 ## Fullscreen live preview
 
@@ -53,6 +61,8 @@ Exit the game or use **Stop recording** to save, including while paused. Pause d
 - **Smoothing:** OpenXR rotational smoothing. More edge margin trades field of view for room at the edges; neither can recover scenery the game did not render.
 
 Smoothing and edge margin are saved when you finish adjusting them. Full view bypasses both, and SteamVR compositor capture bypasses smoothing, without erasing your chosen values. Older versions did not store these two settings; adjust them once in beta.5 or newer if their previous values were lost.
+
+Your Left/Right eye selection is remembered after restart in beta.7 and newer, alongside your other camera settings.
 
 60 fps is an output target. Slow sources repeat frames; overloaded recording can drop frames. Test performance in the games and settings you intend to use.
 

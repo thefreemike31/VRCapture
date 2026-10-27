@@ -2,9 +2,9 @@
 
 ## Armed, but no recording
 
-Wait for **ARMED** before launching the game, and choose a source matching its API. F.E.A.R. VR uses OpenXR, including through SteamVR. Native OpenVR requires the SteamVR compositor source. OpenXR capture must be registered before the game starts. Desktop launchers are not VR frames. SteamVR Home does not start a take.
+Choose **Auto (recommended)**, wait for **ARMED**, then launch the game. Auto selects a supported game image and displays the chosen source. If you use a manual override, F.E.A.R. VR uses OpenXR, including through SteamVR; native OpenVR uses the SteamVR compositor source. Auto/OpenXR setup must be completed before the game starts. Desktop launchers are not VR frames. SteamVR Home does not start a take.
 
-Check the status message. D3D12/Vulkan OpenXR and native Oculus SDK capture are not supported by the OpenXR layer. Game and recorder must use the same GPU. Do not replace game DLLs to fix recorder setup.
+Check the status message. OpenXR capture supports D3D11, D3D12 and OpenGL with 8-bit SDR RGBA/BGRA images. Vulkan, native Oculus SDK and HDR/10-bit/float capture are not supported by the OpenXR layer. Game and recorder must use the same GPU. Do not replace game DLLs to fix recorder setup. If upgrading from a build without D3D12 capture, restart both the recorder and game so the new layer is loaded.
 
 Beta.6 fixes an architecture-specific compatibility issue: a mod disabling an incompatible 64-bit capture layer could previously disable the 32-bit layer too. Update both `layers` folders, including their JSON manifests, and restart the game. Mod authors can disable them independently with `DISABLE_VRCAPTURE_X86` and `DISABLE_VRCAPTURE_X64`; the old shared `DISABLE_VRCAPTURE` name is no longer used. This addresses the reported disable-switch collision; an individual mod may still have other compatibility issues.
 
