@@ -29,3 +29,7 @@ During recording, warnings are silent and appear on the desktop and this panel. 
 **SteamVR / OpenVR compositor source:** a visible panel is already part of SteamVR's mirror and appears in the recording. Its settings explain this limitation. Turning the wrist panel off removes it from both headset and recording. Independent exclusion for native OpenVR is not part of this beta.
 
 Some SteamVR controller drivers may lack the grip-pose data used for placement. The recorder reports a wrist error and hides the panel in that case; video capture is separate. Describe your controller/runtime when reporting positioning problems.
+
+## Presenter notes
+
+Beta.8 also offers a separate notes sheet under **Settings > Presenter notes...**. It has its own wrist and visibility controls and supports Vulkan alongside the other OpenXR graphics paths. See [presenter setup and recording behavior](presenter-notes.md).

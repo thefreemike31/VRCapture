@@ -23,6 +23,11 @@ OpenXR SDK headers - The Khronos Group
 https://github.com/KhronosGroup/OpenXR-SDK
 See OPENXR-LICENSE.txt in the ZIP for the Apache 2.0 license.
 
+Vulkan headers - The Khronos Group
+https://github.com/KhronosGroup/Vulkan-Headers
+See VULKAN-LICENSE.txt and VULKAN-UPSTREAM.txt in the ZIP for the
+Apache 2.0/MIT licensing and pinned header revision. No Vulkan driver is bundled.
+
 Microsoft Windows APIs supply graphics, audio capture and hardware encoding.
 Windows, Meta Quest, Virtual Desktop, SteamVR and DaVinci Resolve are names
 belonging to their respective owners. No affiliation or endorsement is implied.

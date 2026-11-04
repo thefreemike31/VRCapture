@@ -2,7 +2,7 @@
 
 ## Install once
 
-Extract the entire release ZIP into a permanent, writable folder. Open `VRCapture.exe` from that folder. Keep `layers` and `tools` alongside it. You can create a Windows shortcut to the executable.
+Extract the entire release ZIP into a permanent, writable folder. Open `VRCapture.exe` from that folder. Keep `layers`, `input` and `tools` alongside it. You can create a Windows shortcut to the executable.
 
 Before playing, close other copies and run **Test recording.cmd**. It creates ten seconds of generated video and audio in a new `diagnostics` folder. A PASS checks encoding and saving on your computer, not headset capture or microphone routing. Play the saved demo.
 
@@ -14,15 +14,15 @@ Auto prefers a valid OpenXR game image. It gives OpenXR a short opportunity to a
 
 | Game/setup | Recorder source | What to expect |
 | --- | --- | --- |
-| F.E.A.R. VR with Virtual Desktop, Link or SteamVR | OpenXR (DX11 / DX12 / GL) | Captures supported game layers; wrist panel can stay out of the video. |
-| Another supported D3D11/D3D12/OpenGL OpenXR game | OpenXR (DX11 / DX12 / GL) | Flat or VR-perspective menus, optional rotational smoothing. |
+| F.E.A.R. VR with Virtual Desktop, Link or SteamVR | OpenXR (DX / GL / Vulkan) | Captures supported game layers; wrist panel can stay out of the video. |
+| Another supported D3D11/D3D12/OpenGL/Vulkan OpenXR game | OpenXR (DX / GL / Vulkan) | Flat or VR-perspective menus, optional rotational smoothing. |
 | Native OpenVR game, or a game running through SteamVR whose graphics API our OpenXR path does not support | SteamVR / OpenVR | Captures SteamVR's composited eye mirror, including visible overlays. No recorder smoothing or flat-menu mode. |
 
 **SteamVR can run OpenXR games.** Using Steam Link does not automatically mean you need the recorder's SteamVR compositor source. VRCapture does not change your runtime or install a game-specific DLL.
 
 For Auto or OpenXR, click **Arm recording** and approve the Windows setup prompt if requested. This registers capture for both 32-bit and 64-bit applications. Canceling setup leaves it unarmed. Launch games afterward; games already open need restarting.
 
-Beta.7 adds native OpenXR DirectX 12 capture and wrist controls alongside D3D11 and OpenGL. This covers 8-bit SDR RGBA/BGRA images; HDR/10-bit/float, Vulkan and native Oculus SDK capture are not implemented.
+Beta.8 adds native Vulkan capture and wrist support alongside D3D11, D3D12 and OpenGL. This covers 8-bit SDR RGBA/BGRA images; HDR/10-bit/float and native Oculus SDK capture are not implemented. Vulkan requires version 1.1+ and Windows external texture/fence sharing on the same GPU. The owner tested a modified OpenXR/Vulkan Fallout: New Vegas VR build through VDXR; this does not add OpenXR to the upstream mod.
 
 Auto chooses the capture method without changing resolution, bitrate or your VR runtime. SteamVR capture still includes visible overlays and bypasses recorder smoothing. When no supported game image is available, VRCapture stays armed rather than starting an empty take.
 
@@ -50,6 +50,10 @@ During a take, use **Pause** on the desktop or [wrist panel](wrist-panel.md) to 
 
 Exit the game or use **Stop recording** to save, including while paused. Pause does not keep a take open after the game exits. Wait for saving to complete before closing the recorder. Open **Recordings** and inspect picture, voice, game sound, menus and duration. Repeat this short check when changing hardware, runtime or codec.
 
+## Presenter notes
+
+Before launching the game, open **Settings > Presenter notes...**, enter your talking points and enable the notes sheet. Choose its wrist, size and position. Supported Touch controllers can tap the physical thumb rest to show/hide and hold for half a second to turn a page. Head-aimed navigation is available too. OpenXR keeps notes out of recordings; SteamVR/OpenVR mirror capture can include them. See [the presenter guide](presenter-notes.md).
+
 ## Framing and quality
 
 - **1080p / 1440p / 4K:** 16:9, targeting 60 fps. Choose Fill for a cropped single eye or Full view to retain the complete image with bars where needed. They do not stitch both eyes. Higher output resolution cannot create missing source detail.
@@ -68,6 +72,6 @@ Your Left/Right eye selection is remembered after restart in beta.7 and newer, a
 
 ## Update or move
 
-To update in the same folder, close the game, finish saving and close VRCapture. Extract the complete new ZIP over the old installation. Keep recordings and `capture-settings.ini` backed up; neither is included in the download. Open the updated recorder, check **Save folder**, and make a short test. Only run one copy at a time.
+To update in the same folder, close the game, finish saving and close VRCapture. Extract the complete new ZIP over the old installation. Keep recordings, `capture-settings.ini` and `presenter-notes.txt` backed up; none is included in the download. Open the updated recorder, check **Save folder**, and make a short test. Only run one copy at a time.
 
-To move to a different folder, close games and use **Settings > Disable OpenXR capture** in the old copy before moving it. Extract the new version fully, copy your preferences if wanted, and check **Save folder** because retained preferences may refer to the old path. Arm to register the new layers before launching the game.
+To move to a different folder, close games and use **Settings > Disable OpenXR capture** in the old copy before moving it. Extract the new version fully, copy your preferences and presenter notes if wanted, and check **Save folder** because retained preferences may refer to the old path. Arm to register the new layers before launching the game.

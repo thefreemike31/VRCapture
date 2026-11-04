@@ -4,9 +4,15 @@
 
 Choose **Auto (recommended)**, wait for **ARMED**, then launch the game. Auto selects a supported game image and displays the chosen source. If you use a manual override, F.E.A.R. VR uses OpenXR, including through SteamVR; native OpenVR uses the SteamVR compositor source. Auto/OpenXR setup must be completed before the game starts. Desktop launchers are not VR frames. SteamVR Home does not start a take.
 
-Check the status message. OpenXR capture supports D3D11, D3D12 and OpenGL with 8-bit SDR RGBA/BGRA images. Vulkan, native Oculus SDK and HDR/10-bit/float capture are not supported by the OpenXR layer. Game and recorder must use the same GPU. Do not replace game DLLs to fix recorder setup. If upgrading from a build without D3D12 capture, restart both the recorder and game so the new layer is loaded.
+Check the status message. OpenXR capture supports D3D11, D3D12, OpenGL and Vulkan with 8-bit SDR RGBA/BGRA images. Native Oculus SDK and HDR/10-bit/float capture are not supported by the OpenXR layer. Game and recorder must use the same GPU. Do not replace game DLLs to fix recorder setup. If upgrading from a build without the required graphics support, restart both the recorder and game so the new layer is loaded.
 
 Beta.6 fixes an architecture-specific compatibility issue: a mod disabling an incompatible 64-bit capture layer could previously disable the 32-bit layer too. Update both `layers` folders, including their JSON manifests, and restart the game. Mod authors can disable them independently with `DISABLE_VRCAPTURE_X86` and `DISABLE_VRCAPTURE_X64`; the old shared `DISABLE_VRCAPTURE` name is no longer used. This addresses the reported disable-switch collision; an individual mod may still have other compatibility issues.
+
+## Missing Vulkan wrist panel or presenter notes
+
+Update the entire beta.8 ZIP, including both `layers` folders and `input`, then restart the recorder and game. Choose Auto or OpenXR and enable the wrist panel in Settings. Keep your usual runtime. Vulkan needs version 1.1+ and Windows external texture/fence sharing on the same GPU; unsupported devices are reported in the desktop status/layer log.
+
+For presenter notes, enable them before launching the game and check the selected wrist. The sheet starts hidden in thumb-rest mode: tap and release the physical rest beside the Touch face buttons. Lift once after startup or tracking/focus loss. Restart an already-running OpenXR game after enabling thumb control. If the runtime/controller does not supply the sensor, uncheck thumb-rest mode and use raise-and-look navigation. See [presenter notes](presenter-notes.md).
 
 ## Encoder unavailable or the demo fails
 
