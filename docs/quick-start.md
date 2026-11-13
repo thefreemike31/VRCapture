@@ -28,13 +28,17 @@ Auto chooses the capture method without changing resolution, bitrate or your VR 
 
 ## Fullscreen live preview
 
-In beta.6 or newer, click **Fullscreen**, press **F11** while VRCapture has keyboard focus, or double-click the live preview. It opens on the monitor containing the recorder window, with black bars as needed to preserve proportions. Move the recorder to another monitor before entering fullscreen to choose that display.
+In beta.9, click **Windowed** or press **F10** to open a resizable borderless preview. Drag the picture to move it and drag edges or corners to resize it. **Escape**, **Alt+F4**, or right-click > **Return to recorder** closes the preview without stopping a take. Size and position are remembered within the app session, not across restarts.
 
-**Escape**, **F11**, double-click or closing the fullscreen preview returns to the recorder controls. These actions do not stop, pause or start a take. The mirror also works while recording is paused, and continues if you minimize the main controls. Use the existing **Stop recording** button or wrist controls when you want to finish a take.
+Click **Fullscreen**, press **F11** while VRCapture has keyboard focus, or double-click the live preview to toggle fullscreen. From a windowed preview, fullscreen uses that window's monitor and **Escape** restores its prior size and position. From the embedded preview, fullscreen uses the controller's monitor and Escape returns to the controls. These actions do not stop, pause or start a take. The separate preview remains active while recording is paused or the main controls are minimized. Use **Stop recording** or wrist controls to finish a take.
 
-For a live mirror without saving video, open VRCapture, choose your source, use **Fullscreen**, then launch the game without arming. First-use OpenXR setup may request Windows administrator approval; a game already running must restart after registration. This mode does not open recording audio or start the encoder. If you want a recording too, arm normally before launching the game.
+For a live mirror without saving video, open VRCapture, choose your source, use **Windowed** or **Fullscreen**, then launch the game without arming. First-use OpenXR setup may request Windows administrator approval; a game already running must restart after registration. This mode does not open recording audio or start the encoder. If you want a recording too, arm normally before launching the game.
 
-Fullscreen enlarges the existing **1280×720 live preview**. It does not change recording resolution, bitrate, framing or the saved file, and is not a native 4K preview. Presentation runs on the independent preview worker; the display still uses some GPU resources.
+Both modes scale the existing **1280×720 live preview**, fitting the available area and keeping its proportions. Differently shaped windows can show bars; the image is not stretched or newly cropped. This does not change recording resolution, bitrate, framing or the saved file, and is not a native 4K preview. Presentation runs on the independent preview worker; the display still uses some GPU resources.
+
+## Headless recording for agents
+
+Use `--headless` for unattended OpenXR capture without a recorder window, preview or audible cues. Persistent sessions can start/stop several clips and set the next clip's resolution without restarting or manually rearming. Audio defaults to Off; the GUI settings are not loaded. See [headless setup, commands and results](headless.md) before using an agent.
 
 ## Prepare before putting on the headset
 
@@ -61,7 +65,7 @@ Before launching the game, open **Settings > Presenter notes...**, enter your ta
 - **Framing: Full view:** preserves every part of the submitted eye image and its proportions at the selected resolution. Smoothing and edge margin are disabled. Quest 3 and Native source always use full view.
 - **Quest 3:** 2064 x 2208 output, preserving source aspect ratio with padding when needed.
 - **Native source:** output dimensions follow the first source image, aligned for encoding. SteamVR native means its mirror dimensions, which may differ from the game's eye render target.
-- **Menus: Flat panel:** makes supported panel-only menus easier to read. **VR perspective** preserves their placement relative to your view.
+- **Menus: Flat panel:** makes supported panel-only menus easier to read. Beta.9 also recognizes a menu explicitly marked by a compatible mod when a 3D scene is submitted alongside it. Older/unmodified mods do not gain that mixed-scene detection automatically. **VR perspective** preserves the panel's placement relative to your view.
 - **Smoothing:** OpenXR rotational smoothing. More edge margin trades field of view for room at the edges; neither can recover scenery the game did not render.
 
 Smoothing and edge margin are saved when you finish adjusting them. Full view bypasses both, and SteamVR compositor capture bypasses smoothing, without erasing your chosen values. Older versions did not store these two settings; adjust them once in beta.5 or newer if their previous values were lost.

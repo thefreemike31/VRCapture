@@ -10,7 +10,7 @@ Beta.6 fixes an architecture-specific compatibility issue: a mod disabling an in
 
 ## Missing Vulkan wrist panel or presenter notes
 
-Update the entire beta.8 ZIP, including both `layers` folders and `input`, then restart the recorder and game. Choose Auto or OpenXR and enable the wrist panel in Settings. Keep your usual runtime. Vulkan needs version 1.1+ and Windows external texture/fence sharing on the same GPU; unsupported devices are reported in the desktop status/layer log.
+Update the entire latest ZIP, including both `layers` folders and `input`, then restart the recorder and game. Choose Auto or OpenXR and enable the wrist panel in Settings. Keep your usual runtime. Vulkan needs version 1.1+ and Windows external texture/fence sharing on the same GPU; unsupported devices are reported in the desktop status/layer log.
 
 For presenter notes, enable them before launching the game and check the selected wrist. The sheet starts hidden in thumb-rest mode: tap and release the physical rest beside the Touch face buttons. Lift once after startup or tracking/focus loss. Restart an already-running OpenXR game after enabling thumb control. If the runtime/controller does not supply the sensor, uncheck thumb-rest mode and use raise-and-look navigation. See [presenter notes](presenter-notes.md).
 
@@ -43,6 +43,8 @@ Beta.5 saves smoothing and edge margin in `capture-settings.ini`. Keep that file
 Select **Framing: Full view (keep hands visible)** to preserve the complete submitted eye image at 1080p, 1440p, 4K or 2560 x 1080. Bars preserve its proportions where needed. This bypasses smoothing and edge margin, but cannot recover hands or scenery absent from the source image. **Fill** crops the eye image. **Quest 3** and **Native source** always use Full view. **Menus: VR perspective** shows supported game panels spatially. Unsupported layers or modifiers produce diagnostics. Quest/system UI added after PC composition is not captured. SteamVR mirror capture includes overlays to the extent SteamVR exposes them, while OpenXR captures supported game-submitted layers.
 
 ## An alarm sounds
+
+Headless mode has no audible alarms. Read the clip result JSON, session status and process exit code instead; see [headless troubleshooting](headless.md#troubleshooting).
 
 Warnings stay silent during recording so VRCapture's tones cannot enter your footage or microphone. Check the desktop or enable the wrist panel in Settings before recording. A long loading screen can trigger the source-stale warning; 15 seconds without game sound triggers the game-audio warning. Warnings and fatal errors are displayed separately. Test/arming tones remain audible before capture; fatal alarms can sound after capture stops. **Silence alarm** acknowledges the sound; it does not repair the underlying problem. The saved-time counter is more useful than a moving preview for checking progress.
 

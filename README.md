@@ -6,9 +6,11 @@ Arm on your desktop, put on your headset, and launch your game. VRCapture record
 
 ![VRCapture desktop interface](images/recorder.jpg)
 
-**0.1.0-beta.8 · Windows x64 · Closed source**
+**0.1.0-beta.9 · Windows x64 · Closed source**
 
-**New in beta.8:** native OpenXR **Vulkan capture and wrist controls**, plus **presenter notes** on a separate wrist sheet. Keep VDXR as your runtime and use Auto or OpenXR capture. Read [presenter setup](docs/presenter-notes.md) and [capture sources](docs/quick-start.md#choose-your-capture-source).
+**New in beta.9:** **headless OpenXR recording** for agents and automation, persistent sessions that change the next clip's resolution without restarting or manually rearming, and a **resizable borderless preview** with Windowed / F10. See [headless setup and commands](docs/headless.md) and [preview controls](docs/quick-start.md#fullscreen-live-preview).
+
+Flat panel recording also handles menu panels explicitly marked by a compatible mod, even when the game submits a 3D scene alongside them. This requires support in the mod; ordinary gameplay HUDs and headset composition are unchanged.
 
 [Download the beta](https://github.com/thefreemike31/VRCapture/releases) · [Start here](docs/quick-start.md) · [Audio & editing](docs/audio-and-editing.md) · [Wrist controls](docs/wrist-panel.md) · [Troubleshooting](docs/troubleshooting.md)
 
@@ -19,7 +21,8 @@ Arm on your desktop, put on your headset, and launch your game. VRCapture record
 - Capture 32-bit and 64-bit OpenXR games using D3D11/D3D12/OpenGL/Vulkan, or use the SteamVR compositor source.
 - Adjust microphone and game volume independently. Save a mixed track plus separate microphone and game tracks for editing.
 - Pause and resume from the desktop or wrist panel, keeping one video file with paused picture and sound excluded.
-- View the live preview fullscreen with **Fullscreen / F11** or a double-click. **Escape** returns to the controls without stopping a recording.
+- Open a resizable borderless preview with **Windowed / F10**, or use **Fullscreen / F11**. Drag the picture to move, drag edges to resize, and use **Escape** to return. Preview sizing leaves the recording unchanged.
+- Let an agent record OpenXR clips without a window or audible cues. Keep one recorder process running between clips and switch the next take between half-native, native or preset resolutions.
 - See the selected microphone on a wrist panel and change it before or during recording. Use head aiming and dwell controls to arm, pause, resume, stop and confirm.
 - Read multi-page talking points on another wrist, with Touch thumb-rest tap/hold controls or head-aimed navigation. OpenXR notes stay out of your recording.
 - See desktop/wrist warnings during recording, hear setup and post-capture failure alarms, and recover saved components after an interruption.
@@ -28,7 +31,9 @@ Arm on your desktop, put on your headset, and launch your game. VRCapture record
 
 **Also included from beta.5 — pause/resume, remembered camera settings and further performance improvements:** Skip a break or an unwanted section with **Pause**, then **Resume** into the same MP4. Smoothing and edge margin survive restart and upgrades that retain your settings file. OpenGL capture avoids a redundant image copy, and desktop preview presentation runs independently of recording, including during window resizing. Resolution, bitrate and audio-track choices stay the same.
 
-The latest owner test completed roughly 55 minutes of Fallout: New Vegas VR using a modified OpenXR/Vulkan build through VDXR, recording at 4K60 AV1 and stopping from the wrist panel. The owner reported that it worked perfectly. Its reports show no encoder queue drops or audio faults, with two missed output slots and some repeated source images. Automated tests cover x86/x64 Vulkan capture, layers, menus, notes exclusion and the existing graphics paths. This validates the reported setup; other Vulkan games, engines, drivers and runtimes still need testing.
+Beta.9 automated checks cover 32-bit and 64-bit D3D11 sources, including resolution changes across clips in one headless recorder session. Preview tests checked unchanged recording pixels and a 4K60 AV1 take while resizing and delaying presentation. These are automated checks, not headset-performance claims.
+
+The earlier beta.8 owner test completed roughly 55 minutes of Fallout: New Vegas VR using a modified OpenXR/Vulkan build through VDXR, recording at 4K60 AV1 and stopping from the wrist panel. The owner reported that it worked perfectly. Its reports show no encoder queue drops or audio faults, with two missed output slots and some repeated source images. This validates that reported setup; other games, engines, drivers and runtimes still need testing.
 
 To update, close your game and VRCapture, then extract the complete ZIP over your existing installation. Keep your `capture-settings.ini`, `presenter-notes.txt` and recordings; the ZIP contains none of them. If you move to a new folder, follow the relocation steps in the [quick-start guide](docs/quick-start.md).
 
@@ -42,7 +47,9 @@ Auto prefers the OpenXR capture path for supported games such as F.E.A.R. VR, in
 
 ## Compatibility and beta limits
 
-Requires Windows 10/11 x64, a working PCVR setup, Windows Media Foundation and a compatible hardware encoder. Windows N editions may need the Media Feature Pack. The recorder and game must use the same GPU. No separate OBS, Python, FFmpeg or C++ runtime installation is needed.
+Requires Windows 10/11 x64, a working PCVR setup, Windows Media Foundation and a compatible hardware encoder. Windows N editions may need the Media Feature Pack. The recorder and game must use the same GPU. No separate OBS, FFmpeg or C++ runtime installation is needed. The optional `headless-client.py` helper needs Python 3; agents can also use the file-command interface without Python.
+
+Headless mode currently captures OpenXR only. It does not provide SteamVR/OpenVR compositor capture, pause/resume, wrist controls or presenter notes. It needs a normal Windows user session; Windows service/session-0 operation is not validated. Audio defaults to Off and must be selected explicitly. Headless mode does not register capture layers or switch your runtime.
 
 OpenXR capture supports D3D11, D3D12, OpenGL and Vulkan, including wrist controls and presenter notes. It captures 8-bit SDR RGBA/BGRA game images; HDR/10-bit/float capture and native Oculus SDK capture are not implemented. OpenGL needs compatible `WGL_NV_DX_interop2` support. Vulkan needs Vulkan 1.1+ with Windows external texture/fence sharing on the same GPU. SteamVR capture uses its compositor mirror and has different framing/overlay limits. Standalone Quest games and Quest/Virtual Desktop system UI are outside this PC capture path.
 
